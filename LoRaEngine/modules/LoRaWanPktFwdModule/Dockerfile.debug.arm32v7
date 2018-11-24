@@ -26,6 +26,7 @@ WORKDIR /build
 
 FROM arm32v7/debian:stretch-slim as exec
 ENV NETWORK_SERVER=172.17.0.1
+ENV RESET_PIN=7
 WORKDIR /LoRa
 COPY --from=builder /build/packet_forwarder/lora_pkt_fwd/lora_pkt_fwd .
 COPY --from=builder /build/packet_forwarder/lora_pkt_fwd/global_conf.json .
